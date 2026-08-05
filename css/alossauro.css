@@ -29,9 +29,7 @@ body {
     flex-direction: column;
 }
 
-/* ==========================================
-   CABEÇALHO
-   ========================================== */
+
 header {
     display: flex;
     justify-content: space-between;
@@ -74,9 +72,7 @@ header {
     transform: translateX(-3px);
 }
 
-/* ==========================================
-   LAYOUT PRINCIPAL
-   ========================================== */
+
 main {
     display: grid;
     grid-template-columns: 1fr 1.1fr;
@@ -87,7 +83,7 @@ main {
     align-items: start;
 }
 
-/* Container da Imagem Principal */
+
 .img-container {
     position: relative;
     width: 100%;
@@ -127,7 +123,7 @@ main {
     text-transform: uppercase;
 }
 
-/* Coluna de Conteúdo */
+
 .content-col {
     display: flex;
     flex-direction: column;
@@ -215,9 +211,7 @@ h1 {
     color: var(--text-primary);
 }
 
-/* ==========================================
-   BOTÕES DE AÇÃO DOS MODAIS
-   ========================================== */
+
 .modal-actions {
     display: flex;
     gap: 1rem;
@@ -262,9 +256,6 @@ h1 {
     background: rgba(229, 62, 62, 0.08);
 }
 
-/* ==========================================
-   ESTILOS DOS MODAIS
-   ========================================== */
 .modal {
     display: none;
     position: fixed;
@@ -367,9 +358,7 @@ h1 {
     display: block;
 }
 
-/* ==========================================
-   RESPONSIVIDADE
-   ========================================== */
+
 @media (max-width: 880px) {
     header {
         padding: 1.2rem 1.5rem;

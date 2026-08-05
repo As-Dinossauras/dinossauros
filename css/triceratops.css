@@ -17,9 +17,7 @@ body {
     overflow-x: hidden;
 }
 
-/* ==========================================
-   CABEÇALHO E NAVEGAÇÃO
-   ========================================== */
+
 header {
     display: flex;
     justify-content: space-between;
@@ -74,9 +72,7 @@ header {
     fill: currentColor;
 }
 
-/* ==========================================
-   CONTAINER PRINCIPAL LANDSCAPE (DEITADO)
-   ========================================== */
+
 main {
     flex: 1;
     display: flex;
@@ -89,7 +85,7 @@ main {
     gap: 50px;
 }
 
-/* Coluna de Texto e Estatísticas */
+
 .content-col {
     flex: 1;
     display: flex;
@@ -122,7 +118,7 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* Cards com Fatos e Biologia do Triceratops */
+
 .tech-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -165,7 +161,7 @@ h1 {
     margin-top: 10px;
 }
 
-/* Coluna da Imagem */
+
 .image-col {
     flex: 1.1;
     display: flex;
@@ -189,9 +185,7 @@ h1 {
     display: block;
 }
 
-/* ==========================================
-   BOTÕES DE AÇÃO DOS MODAIS
-   ========================================== */
+
 .modal-actions {
     display: flex;
     gap: 12px;
@@ -221,9 +215,7 @@ h1 {
     transform: translateY(-2px);
 }
 
-/* ==========================================
-   ESTILOS DOS MODAIS (OVERLAY E CONTEÚDO)
-   ========================================== */
+
 .modal {
     display: none;
     position: fixed;
@@ -291,7 +283,7 @@ h1 {
     text-transform: uppercase;
 }
 
-/* Grids e Elementos Internos dos Modais */
+
 .modal-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -328,9 +320,7 @@ h1 {
     display: block;
 }
 
-/* ==========================================
-   RESPONSIVIDADE
-   ========================================== */
+
 @media (max-width: 960px) {
     main {
         flex-direction: column-reverse;
