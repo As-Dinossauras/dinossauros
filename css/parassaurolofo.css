@@ -1,4 +1,3 @@
-/* 1. Importação das fontes Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@400;500;700&display=swap');
 
 * {
@@ -10,7 +9,6 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #060a08;
-    /* Fundo tático com iluminação radial acústica verde-azulada */
     background-image: 
         radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.14) 0%, transparent 45%),
         radial-gradient(circle at 15% 85%, rgba(6, 182, 212, 0.08) 0%, transparent 50%),
@@ -24,7 +22,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Cabeçalho Flutuante com Glassmorphism */
+
 header {
     display: flex;
     justify-content: space-between;
@@ -108,7 +106,7 @@ header:hover {
     transform: translateX(-4px);
 }
 
-/* Container Principal Landscape */
+
 main {
     flex: 1;
     display: flex;
@@ -122,14 +120,14 @@ main {
     gap: 60px;
 }
 
-/* Coluna Texto / Informações */
+
 .content-col {
     flex: 1;
     display: flex;
     flex-direction: column;
 }
 
-/* Tag de Anatomia com pulsação estilo onda sonora */
+
 .tag-anatomia {
     position: relative;
     display: inline-flex;
@@ -183,14 +181,13 @@ h1 {
     line-height: 1.0;
     margin-bottom: 24px;
     text-transform: uppercase;
-    /* Gradiente com toque ciano/esmeralda */
     background: linear-gradient(135deg, #ffffff 30%, #99f6e4 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
 }
 
-/* Grid de Cards */
+
 .tech-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -210,7 +207,7 @@ h1 {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Linha expansível com gradiente ciano-verde */
+
 .tech-card::before {
     content: '';
     position: absolute;
@@ -250,7 +247,7 @@ h1 {
     letter-spacing: 0.3px;
 }
 
-/* Caixa de Detalhes */
+
 .details-box {
     font-size: 14px;
     line-height: 1.7;
@@ -271,7 +268,7 @@ h1 {
     color: #99f6e4;
 }
 
-/* Coluna da Imagem */
+
 .image-col {
     flex: 1.1;
     display: flex;
@@ -318,7 +315,7 @@ h1 {
     filter: brightness(1.05) contrast(1.1);
 }
 
-/* Responsividade Mobile */
+
 @media (max-width: 960px) {
     header {
         margin: 10px 15px 0;
@@ -350,14 +347,13 @@ h1 {
 }
 
 
-/* Container dos botões do cabeçalho */
 .header-actions {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-/* Estilo base para botões do header */
+
 .btn-header {
     display: inline-flex;
     align-items: center;
@@ -373,7 +369,7 @@ h1 {
     border: none;
 }
 
-/* Botão Esqueleto */
+
 .btn-esqueleto {
     background-color: #38bdf8;
     color: #0f172a;
@@ -384,7 +380,7 @@ h1 {
     color: #ffffff;
 }
 
-/* Botão Ficha Técnica */
+
 .btn-info {
     background-color: #10b981;
     color: #ffffff;
@@ -394,7 +390,7 @@ h1 {
     background-color: #059669;
 }
 
-/* Estrutura Base dos Modais */
+
 .modal {
     display: none;
     position: fixed;
@@ -409,7 +405,7 @@ h1 {
     align-items: center;
 }
 
-/* Modal do Esqueleto (Imagem) */
+
 .modal-container {
     position: relative;
     display: flex;
@@ -433,7 +429,6 @@ h1 {
     font-size: 1rem;
 }
 
-/* Modal de Ficha Técnica (Card de Informações) */
 .modal-card {
     position: relative;
     background-color: #1e293b;
@@ -495,7 +490,7 @@ h1 {
     color: #f8fafc;
 }
 
-/* Botão Fechar (X) */
+
 .close-modal {
     position: absolute;
     top: 15px;
@@ -512,7 +507,7 @@ h1 {
     color: #ff4747;
 }
 
-/* Animação */
+
 @keyframes zoomIn {
     from {
         transform: scale(0.85);

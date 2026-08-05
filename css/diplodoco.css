@@ -27,9 +27,7 @@ body {
     padding-bottom: 5rem;
 }
 
-/* ==========================================
-   HEADER ESTILO MUSEU
-   ========================================== */
+
 .museum-nav {
     display: flex;
     justify-content: space-between;
@@ -84,9 +82,7 @@ body {
     color: var(--accent-sand);
 }
 
-/* ==========================================
-   LAYOUT PRINCIPAL
-   ========================================== */
+
 .diplodoco-layout {
     max-width: 1200px;
     margin: 0 auto;
@@ -158,9 +154,7 @@ body {
     color: var(--accent-sand);
 }
 
-/* ==========================================
-   FAIXA DE MÉTRICAS HORIZONTAL
-   ========================================== */
+
 .metric-strip {
     display: flex;
     justify-content: space-between;
@@ -204,9 +198,7 @@ body {
     background-color: var(--border-color);
 }
 
-/* ==========================================
-   MOSAICO DE CONTEÚDO
-   ========================================== */
+
 .section-title {
     font-family: 'Cinzel', serif;
     font-size: 1.8rem;
@@ -260,9 +252,7 @@ body {
     color: var(--text-muted);
 }
 
-/* ==========================================
-   BOTÕES DE AÇÃO DOS MODAIS
-   ========================================== */
+
 .modal-actions-container {
     display: flex;
     justify-content: center;
@@ -312,9 +302,7 @@ body {
     background: rgba(233, 196, 106, 0.08);
 }
 
-/* ==========================================
-   ESTILOS DOS MODAIS
-   ========================================== */
+
 .modal {
     display: none;
     position: fixed;
@@ -417,9 +405,7 @@ body {
     display: block;
 }
 
-/* ==========================================
-   RESPONSIVIDADE
-   ========================================== */
+
 @media (max-width: 992px) {
     .museum-nav {
         padding: 1.2rem 1.5rem;
