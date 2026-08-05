@@ -1,0 +1,270 @@
+/* 1. Importação das fontes Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #060a08;
+    /* Fundo tático com iluminação radial e malha quadriculada */
+    background-image: 
+        radial-gradient(circle at 80% 20%, rgba(34, 197, 94, 0.15) 0%, transparent 45%),
+        radial-gradient(circle at 15% 85%, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+    color: #e0e6e1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* Cabeçalho Flutuante com Efeito Glassmorphism */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 40px 0;
+    padding: 16px 35px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(10, 16, 12, 0.75);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.logo span {
+    color: #22c55e;
+    text-shadow: 0 0 12px rgba(34, 197, 94, 0.4);
+}
+
+.logo-icon {
+    font-size: 22px;
+    color: #22c55e;
+    filter: drop-shadow(0 0 6px rgba(34, 197, 94, 0.6));
+}
+
+.btn-voltar {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #15803d 0%, #166534 100%);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(134, 239, 172, 0.2);
+    box-shadow: 0 4px 15px rgba(22, 101, 52, 0.3);
+}
+
+.btn-voltar:hover {
+    background: linear-gradient(135deg, #22c55e 0%, #15803d 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4);
+}
+
+.btn-voltar svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+    flex-shrink: 0;
+}
+
+/* Container Principal Landscape - Imagem na esquerda, Texto na direita */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 50px;
+    max-width: 1450px;
+    margin: 0 auto;
+    width: 100%;
+    gap: 60px;
+}
+
+/* Coluna Texto / Informações */
+.content-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.tag-anatomia {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    background: rgba(34, 197, 94, 0.1);
+    color: #4ade80;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    box-shadow: 0 0 15px rgba(34, 197, 94, 0.1);
+}
+
+h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 58px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    line-height: 1.0;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    /* Texto com gradiente metálico e iluminação */
+    background: linear-gradient(135deg, #ffffff 40%, #86efac 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
+}
+
+/* Grid de Cards com Borda Superior e Efeito Glow */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.tech-card {
+    background: rgba(20, 30, 24, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-top: 2px solid rgba(34, 197, 94, 0.5);
+    padding: 16px 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(8px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tech-card:hover {
+    background: rgba(34, 197, 94, 0.08);
+    border-color: rgba(34, 197, 94, 0.5);
+    border-top-color: #22c55e;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 15px rgba(34, 197, 94, 0.15);
+}
+
+.tech-card .label {
+    font-size: 11px;
+    color: #6ee7b7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+    opacity: 0.8;
+}
+
+.tech-card .value {
+    font-size: 17px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+/* Caixa de Detalhes com Destaque Superior */
+.details-box {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #cbd5e1;
+    background: linear-gradient(180deg, rgba(34, 197, 94, 0.08) 0%, rgba(10, 16, 12, 0.6) 100%);
+    padding: 22px;
+    border-radius: 12px;
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    border-top: 3px solid #22c55e;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.details-box p + p {
+    margin-top: 12px;
+}
+
+.details-box strong {
+    color: #86efac;
+}
+
+/* Coluna da Imagem com Moldura Destaque e Zoom no Hover */
+.image-col {
+    flex: 1.1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-container {
+    position: relative;
+    width: 100%;
+    height: 480px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(34, 197, 94, 0.15);
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.img-container:hover img {
+    transform: scale(1.06);
+}
+
+/* Responsividade Mobile */
+@media (max-width: 960px) {
+    header {
+        margin: 10px 15px 0;
+        padding: 14px 20px;
+    }
+
+    main {
+        flex-direction: column-reverse;
+        padding: 25px 20px;
+        gap: 35px;
+    }
+
+    .content-col,
+    .image-col {
+        width: 100%;
+    }
+
+    .img-container {
+        height: 320px;
+    }
+
+    h1 {
+        font-size: 42px;
+    }
+
+    .tech-grid {
+        grid-template-columns: 1fr;
+    }
+}
