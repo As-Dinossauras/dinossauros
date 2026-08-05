@@ -7,16 +7,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/branquiossauro.css">
+    <link rel="stylesheet" href="../css/branquiossauro.css">
 </head>
 <body>
 
     <header class="navbar">
         <div class="brand">
-            <span class="brand-icon"></span>
+            <span class="brand-icon fa-dragon fa-solid"></span>
             <span class="brand-title">DINO<span>MUNDO</span></span>
         </div>
-        <a href="/index.html" class="nav-back">
+        <a href="../index.html" class="nav-back">
             <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
                 <line x1="19" y1="12" x2="5" y2="12"></line>
                 <polyline points="12 19 5 12 12 5"></polyline>
@@ -30,7 +30,7 @@
         <!-- Painel Visual (Esquerda) -->
         <section class="visual-panel">
             <div class="image-wrapper">
-                <img src="/img/branquiossauro.png" alt="Ilustração de um Braquiossauro">
+                <img src="../img/branquiossauro.png" alt="Ilustração de um Braquiossauro">
                 <div class="image-overlay"></div>
                 <div class="badge-tag">Sauropoda • Jurássico Superior</div>
             </div>
@@ -89,9 +89,82 @@
                     </div>
                 </div>
             </section>
+
+            <!-- Botões dos Modais -->
+            <div class="modal-actions">
+                <button class="btn-modal" onclick="openModal('modal-ficha')">
+                    Ficha Técnica
+                </button>
+                <button class="btn-modal" onclick="openModal('modal-esqueleto')">
+                    Ver Esqueleto
+                </button>
+            </div>
         </section>
 
     </main>
+
+    <!-- Modal 1: Ficha Técnica do Braquiossauro -->
+    <div id="modal-ficha" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal-ficha')">&times;</span>
+            <div class="modal-header">
+                <h2>Informações Gerais</h2>
+            </div>
+            <div class="modal-grid">
+                <div class="modal-card">
+                    <div class="label">Período</div>
+                    <div class="value">Jurássico Superior</div>
+                </div>
+                <div class="modal-card">
+                    <div class="label">Altura do Ombro</div>
+                    <div class="value">6 a 7 Metros</div>
+                </div>
+                <div class="modal-card">
+                    <div class="label">Peso Estimado</div>
+                    <div class="value">35 a 50 Toneladas</div>
+                </div>
+                <div class="modal-card">
+                    <div class="label">Habitat</div>
+                    <div class="value">América do Norte</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2: Esqueleto do Braquiossauro -->
+    <div id="modal-esqueleto" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal-esqueleto')">&times;</span>
+            <div class="modal-header">
+                <h2>Esqueleto do Braquiossauro</h2>
+            </div>
+            <div class="modal-body">
+                <img src="../img/esqueletoBraquiossauro.png" alt="Esqueleto Completo do Braquiossauro" class="modal-img-full">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        };
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                document.querySelectorAll('.modal').forEach(m => m.style.display = 'none');
+            }
+        });
+    </script>
 
 </body>
 </html>
