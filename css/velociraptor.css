@@ -1,0 +1,220 @@
+/* 1. Importação das fontes Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #0b110d;
+    background-image: 
+        radial-gradient(circle at 85% 15%, rgba(40, 60, 45, 0.3) 0%, transparent 60%),
+        radial-gradient(circle at 15% 85%, rgba(15, 28, 20, 0.5) 0%, transparent 60%);
+    color: #e0e6e1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* Cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 45px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(11, 17, 13, 0.9);
+    /* 2. Suporte estendido para o Blur no Safari */
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.logo span {
+    color: #729c48;
+}
+
+.btn-voltar {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #485c34;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.btn-voltar:hover {
+    background-color: #5a753e;
+    transform: translateY(-2px);
+}
+
+.btn-voltar svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+    /* 4. Impede deformação do ícone */
+    flex-shrink: 0; 
+}
+
+/* Container Principal Landscape (Deitado) */
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 50px;
+    max-width: 1450px;
+    margin: 0 auto;
+    width: 100%;
+    gap: 50px;
+}
+
+/* Coluna Texto / Estatísticas Biológicas */
+.content-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.tag-anatomia {
+    display: inline-block;
+    align-self: flex-start;
+    background: rgba(114, 156, 72, 0.15);
+    color: #8cb861;
+    border: 1px solid rgba(114, 156, 72, 0.3);
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 54px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-transform: uppercase;
+    line-height: 1.0;
+    margin-bottom: 20px;
+}
+
+/* Cards com Fatos de Física e Biologia do T-Rex */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.tech-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 14px 18px;
+    border-radius: 8px;
+}
+
+.tech-card .label {
+    font-size: 11px;
+    color: #7c9482;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 4px;
+}
+
+.tech-card .value {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.details-box {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #b0c0b3;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 18px;
+    border-radius: 10px;
+    border-left: 4px solid #729c48;
+}
+
+.details-box p + p {
+    margin-top: 10px;
+}
+
+/* Coluna da Imagem */
+.image-col {
+    flex: 1.1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-container {
+    width: 100%;
+    height: 460px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Responsividade Mobile */
+@media (max-width: 960px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    main {
+        flex-direction: column-reverse; /* Imagem fica no topo no mobile */
+        padding: 20px;
+        gap: 30px;
+    }
+
+    /* 3. Garantir largura total dos filhos no mobile */
+    .content-col,
+    .image-col {
+        width: 100%;
+    }
+
+    .img-container {
+        height: 300px;
+    }
+
+    h1 {
+        font-size: 38px;
+    }
+}
