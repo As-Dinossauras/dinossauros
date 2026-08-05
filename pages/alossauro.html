@@ -7,31 +7,32 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/alossauro.css">
-    
+    <link rel="stylesheet" href="../css/alossauro.css">
 </head>
 <body>
 
     <header>
-        <a href="/index.html" class="logo">DINO<span>MUNDO</span></a>
-        <a href="/index.html" class="btn-voltar">← Voltar ao Início</a>
+        <a href="../index.html" class="logo">DINO<span>MUNDO</span></a>
+        <a href="../index.html" class="btn-voltar">← Voltar ao Início</a>
     </header>
 
     <main>
         <div class="img-container">
-            <img src="/img/alossauro.png" alt="Alossauro">
+            <img src="../img/alossauro.png" alt="Alossauro">
+            <div class="frame-tag">O Ágil Predador do Jurássico</div>
         </div>
 
         <div class="content-col">
-            <div>
+            <header class="dino-title">
                 <span class="tag">Carnívoro • Jurássico Superior</span>
                 <h1>ALOSSAURO</h1>
-            </div>
+                <p class="scientific-name">Allosaurus fragilis</p>
+            </header>
 
             <div class="info-grid">
                 <div class="info-card">
                     <div class="label">Comprimento</div>
-                    <div class="value">8,5 a 9,7 metros</div>
+                    <div class="value">8,5 a 9,7 m</div>
                 </div>
                 <div class="info-card">
                     <div class="label">Massa Corporal</div>
@@ -48,10 +49,83 @@
             </div>
 
             <div class="description-box">
-                <p><strong>Caçador Ágil:</strong> O Alossauro foi o grande predador dominante da América do Norte no Período Jurássico. Ele abria a mandíbula em ângulos amplos para golpear presas como um machado, usando dentes serrados e garras afiadas para caçar.</p>
+                <p><strong>Caçador Ágil:</strong> O Alossauro foi o predador dominante da América do Norte no Período Jurássico. Ele abria a mandíbula em ângulos amplos para golpear presas como um machado, usando dentes serrados e garras afiadas para caçar.</p>
+            </div>
+
+            <!-- Botões de Ação dos Modais -->
+            <div class="modal-actions">
+                <button class="btn-modal" onclick="openModal('modal-ficha')">
+                    Ficha Técnica
+                </button>
+                <button class="btn-modal btn-secondary" onclick="openModal('modal-esqueleto')">
+                    Ver Esqueleto
+                </button>
             </div>
         </div>
     </main>
+
+    <!-- Modal 1: Ficha Técnica do Alossauro -->
+    <div id="modal-ficha" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal-ficha')">&times;</span>
+            <div class="modal-header">
+                <h2>Especificações do Predador</h2>
+            </div>
+            <div class="modal-grid">
+                <div class="modal-card">
+                    <div class="label">Período Geológico</div>
+                    <div class="value">Jurássico Superior (~155-150 MiA)</div>
+                </div>
+                <div class="modal-card">
+                    <div class="label">Localização das Descobertas</div>
+                    <div class="value">EUA (Colorado, Utah, Wyoming)</div>
+                </div>
+                <div class="modal-card">
+                    <div class="label">Dieta Alimentar</div>
+                    <div class="value">Carnívoro (Estegossauros e Saurópodes)</div>
+                </div>
+                <div class="modal-card">
+                    <div class="label">Estratégia de Caça</div>
+                    <div class="value">Ataque Rápido por Impacto (Machado)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2: Esqueleto do Alossauro -->
+    <div id="modal-esqueleto" class="modal">
+        <div class="modal-content modal-large">
+            <span class="close-btn" onclick="closeModal('modal-esqueleto')">&times;</span>
+            <div class="modal-header">
+                <h2>Anatomia Óssea — Allosaurus fragilis</h2>
+            </div>
+            <div class="modal-body">
+                <img src="../img/esqueletoAlossauro.png" alt="Esqueleto do Alossauro em exposição no museu" class="modal-img-full">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        };
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                document.querySelectorAll('.modal').forEach(m => m.style.display = 'none');
+            }
+        });
+    </script>
 
 </body>
 </html>
