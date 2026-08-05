@@ -23,19 +23,16 @@
         </div>
 
         <div class="header-actions">
-            <!-- Botão 1: Ver Esqueleto -->
             <button id="btn-esqueleto" class="btn-header btn-esqueleto">
                 <i class="fa-solid fa-bone"></i>
                 Ver Esqueleto
             </button>
 
-            <!-- Botão 2: Ficha Técnica -->
             <button id="btn-info" class="btn-header btn-info">
                 <i class="fa-solid fa-circle-info"></i>
                 Ficha Técnica
             </button>
 
-            <!-- Botão Voltar -->
             <a href="/index.html" class="btn-header btn-voltar">
                 <svg viewBox="0 0 24 24">
                     <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
@@ -85,7 +82,6 @@
         </div>
     </main>
 
-    <!-- Modal 1: Esqueleto -->
     <div id="skeletonModal" class="modal">
         <div class="modal-container">
             <span class="close-modal" id="closeSkeleton">&times;</span>
@@ -94,7 +90,6 @@
         </div>
     </div>
 
-    <!-- Modal 2: Ficha Técnica (Período, Tamanho, Peso, Habitat) -->
     <div id="infoModal" class="modal">
         <div class="modal-card">
             <span class="close-modal" id="closeInfo">&times;</span>
@@ -137,33 +132,26 @@
     </div>
 
     <script>
-        // Elementos dos Modais
         const skeletonModal = document.getElementById("skeletonModal");
         const infoModal = document.getElementById("infoModal");
 
-        // Botões de Abrir
         const btnEsqueleto = document.getElementById("btn-esqueleto");
         const btnInfo = document.getElementById("btn-info");
 
-        // Botões de Fechar
         const closeSkeleton = document.getElementById("closeSkeleton");
         const closeInfo = document.getElementById("closeInfo");
 
-        // Funções para Abrir
         btnEsqueleto.onclick = () => skeletonModal.style.display = "flex";
         btnInfo.onclick = () => infoModal.style.display = "flex";
 
-        // Funções para Fechar
         closeSkeleton.onclick = () => skeletonModal.style.display = "none";
         closeInfo.onclick = () => infoModal.style.display = "none";
 
-        // Fechar ao clicar fora do conteúdo
         window.onclick = function (event) {
             if (event.target === skeletonModal) skeletonModal.style.display = "none";
             if (event.target === infoModal) infoModal.style.display = "none";
         };
 
-        // Fechar com a tecla ESC
         document.addEventListener("keydown", function (event) {
             if (event.key === "Escape") {
                 skeletonModal.style.display = "none";
