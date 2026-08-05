@@ -1,0 +1,280 @@
+/* /css/diplodoco.css */
+
+:root {
+    --bg-main: #0a0b0e;
+    --bg-surface: #12141c;
+    --bg-card: #181b26;
+    --border-color: rgba(212, 163, 115, 0.18);
+    --accent-sand: #d4a373;
+    --accent-gold: #e9c46a;
+    --text-primary: #f8fafc;
+    --text-muted: #94a3b8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    padding-bottom: 5rem;
+}
+
+/* Header Estilo Museu */
+.museum-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.8rem 4rem;
+    background-color: var(--bg-surface);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-brand {
+    font-family: 'Cinzel', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.nav-brand .symbol {
+    color: var(--accent-sand);
+    font-size: 0.9rem;
+    margin-right: 0.4rem;
+}
+
+.nav-brand span {
+    color: var(--accent-sand);
+}
+
+.nav-tag {
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.nav-close {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.2s;
+}
+
+.nav-close:hover {
+    color: var(--accent-sand);
+}
+
+/* Layout Principal Vertical Centrado */
+.diplodoco-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Hero Banner */
+.hero-banner {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.period-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: var(--accent-gold);
+    background: rgba(233, 196, 106, 0.08);
+    border: 1px solid rgba(233, 196, 106, 0.2);
+    padding: 0.4rem 1.2rem;
+    border-radius: 50px;
+    margin-bottom: 1rem;
+}
+
+.hero-meta h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 4.5rem;
+    font-weight: 900;
+    letter-spacing: 6px;
+    color: #ffffff;
+    line-height: 1.1;
+}
+
+.scientific {
+    font-style: italic;
+    color: var(--accent-sand);
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.hero-frame {
+    position: relative;
+    width: 100%;
+    height: 480px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+}
+
+.hero-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.frame-tag {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    background: rgba(10, 11, 14, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    color: var(--accent-sand);
+}
+
+/* Faixa de Métricas Horizontal */
+.metric-strip {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2rem 2.5rem;
+    margin: 3rem 0;
+}
+
+.metric-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.m-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.m-value {
+    font-family: 'Cinzel', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+}
+
+.m-desc {
+    font-size: 0.8rem;
+    color: #cbd5e1;
+}
+
+.metric-divider {
+    width: 1px;
+    height: 50px;
+    background-color: var(--border-color);
+}
+
+/* Mosaico de Conteúdo */
+.section-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    margin-bottom: 1.8rem;
+    color: #ffffff;
+    border-left: 4px solid var(--accent-sand);
+    padding-left: 1rem;
+}
+
+.mosaic-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 1.5rem;
+}
+
+.mosaic-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.main-feature {
+    grid-row: span 2;
+    background: linear-gradient(145deg, #181b26 0%, #11131c 100%);
+    border-color: rgba(233, 196, 106, 0.3);
+}
+
+.card-number {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--accent-sand);
+    opacity: 0.6;
+}
+
+.mosaic-card h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.3rem;
+    color: #ffffff;
+}
+
+.mosaic-card p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .museum-nav {
+        padding: 1.2rem 1.5rem;
+    }
+    .nav-tag {
+        display: none;
+    }
+
+    .hero-meta h1 {
+        font-size: 3rem;
+    }
+
+    .hero-frame {
+        height: 320px;
+    }
+
+    .metric-strip {
+        flex-direction: column;
+        gap: 1.8rem;
+        align-items: flex-start;
+    }
+
+    .metric-divider {
+        width: 100%;
+        height: 1px;
+    }
+
+    .mosaic-grid {
+        grid-template-columns: 1fr;
+    }
+}
