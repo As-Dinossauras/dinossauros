@@ -7,24 +7,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/diplodoco.css">
+    <link rel="stylesheet" href="../css/diplodoco.css">
 </head>
 <body>
 
     <!-- Header Estilo Galeria / Museu -->
     <header class="museum-nav">
-        <a href="/index.html" class="nav-brand">
+        <a href="../index.html" class="nav-brand">
             <span class="symbol">◆</span> DINO<span>MUNDO</span>
         </a>
         <div class="nav-tag">ESPAÇO PALEO-ARQUIVO</div>
-        <a href="/index.html" class="nav-close">
+        <a href="../index.html" class="nav-close">
             <span>Fechar Ficha</span> ✕
         </a>
     </header>
 
     <main class="diplodoco-layout">
 
-        <!-- 1. Hero com Título Gigante e Imagem Central em Formato Banner -->
+        <!-- 1. Hero com Título e Imagem Central -->
         <section class="hero-banner">
             <div class="hero-meta">
                 <span class="period-badge">Jurássico Superior • ~154 MiA</span>
@@ -33,7 +33,7 @@
             </div>
             
             <div class="hero-frame">
-                <img src="/img/diplodoco.png" alt="Diplodoco em seu habitat pré-histórico">
+                <img src="../img/diplodoco.png" alt="Diplodoco em seu habitat pré-histórico">
                 <div class="frame-tag">O gigante de cauda em chicote</div>
             </div>
         </section>
@@ -65,7 +65,82 @@
             </div>
         </section>
 
+        <!-- 3. Botões de Ação para Modais -->
+        <section class="modal-actions-container">
+            <div class="modal-actions">
+                <button class="btn-modal" onclick="openModal('modal-ficha')">
+                    Ficha Técnica Completa
+                </button>
+                <button class="btn-modal btn-secondary" onclick="openModal('modal-esqueleto')">
+                    Exibir Registros do Esqueleto
+                </button>
+            </div>
+        </section>
+
     </main>
+
+    <!-- Modal 1: Ficha Técnica do Diplodoco -->
+    <div id="modal-ficha" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal-ficha')">&times;</span>
+            <div class="modal-header">
+                <h2>Especificações Arquivísticas</h2>
+            </div>
+            <div class="modal-grid">
+                <div class="modal-card">
+                    <div class="label">Período Geológico</div>
+                    <div class="value">Jurássico Superior (~154-150 MiA)</div>
+                </div>
+                <div class="modal-card">
+                    <div class="label">Habitat Principal</div>
+                    <div class="value">América do Norte (Formação Morrison)</div>
+                </div>
+                <div class="modal-card">
+                    <div class="label">Dieta Alimentar</div>
+                    <div class="value">Herbívoro (Samambaias e Coníferas)</div>
+                </div>
+                <div class="modal-card">
+                    <div class="label">Mecânica de Defesa</div>
+                    <div class="value">Cauda Chicote Supersônica</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2: Esqueleto do Diplodoco -->
+    <div id="modal-esqueleto" class="modal">
+        <div class="modal-content modal-large">
+            <span class="close-btn" onclick="closeModal('modal-esqueleto')">&times;</span>
+            <div class="modal-header">
+                <h2>Anatomia Óssea — Diplodocus carnegii</h2>
+            </div>
+            <div class="modal-body">
+                <img src="../img/esqueletoDiplodoco.png" alt="Esqueleto de Diplodoco em exposição no museu" class="modal-img-full">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        };
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                document.querySelectorAll('.modal').forEach(m => m.style.display = 'none');
+            }
+        });
+    </script>
 
 </body>
 </html>
