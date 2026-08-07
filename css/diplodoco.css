@@ -1,7 +1,7 @@
 /* /css/diplodoco.css */
 
 :root {
-    --bg-main: #0a0b0e;
+    --bg-main: #f7f8fa;
     --bg-surface: #12141c;
     --bg-card: #181b26;
     --border-color: rgba(212, 163, 115, 0.18);
@@ -113,7 +113,7 @@ body {
     font-size: 4.5rem;
     font-weight: 900;
     letter-spacing: 6px;
-    color: #ffffff;
+    color: #0e0e2f;
     line-height: 1.1;
 }
 
@@ -132,7 +132,6 @@ body {
     border-radius: 20px;
     overflow: hidden;
     border: 1px solid var(--border-color);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
 }
 
 .hero-frame img {
