@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DinoMundo - Espinossauro</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Roboto:wght@300;400;500;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="../css/espinossauro.css">
 </head>
-
 <body>
 
     <header>
@@ -21,76 +17,101 @@
             <i class="fa-solid fa-dragon logo-icon"></i>
             DINO<span>MUNDO</span>
         </div>
-
-        <div class="header-actions">
-            <button id="btn-esqueleto" class="btn-header btn-esqueleto">
-                <i class="fa-solid fa-bone"></i>
-                Ver Esqueleto
-            </button>
-
-            <button id="btn-info" class="btn-header btn-info">
-                <i class="fa-solid fa-circle-info"></i>
-                Ficha Técnica
-            </button>
-
-            <a href="/index.html" class="btn-header btn-voltar">
-                <svg viewBox="0 0 24 24">
-                    <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
-                </svg>
-                Voltar ao Início
-            </a>
-        </div>
+        <a href="../index.html" class="btn-voltar">
+            <i class="fa-solid fa-arrow-left"></i> Voltar
+        </a>
     </header>
 
-    <main>
-        <div class="content-col">
-            <span class="tag-anatomia">Adaptação Semiaquática</span>
-            <h1>ESPINOSSAURO</h1>
+    <main class="main-container">
+        
+        <div class="hero-card">
+            <img src="../img/espinossauro.jpg" alt="Espinossauro" class="hero-img">
+            <div class="hero-caption">
+                <h1>ESPINOSSAURO</h1>
+                <p><i class="fa-solid fa-water"></i> Adaptação Semiaquática</p>
+            </div>
+        </div>
+
+       
+        <button class="btn-open-drawer" onclick="toggleDrawer()">
+            <i class="fa-solid fa-sliders"></i>
+            <span>Informações</span>
+        </button>
+    </main>
+
+    
+    <div class="drawer-overlay" id="drawerOverlay" onclick="toggleDrawer()"></div>
+
+    <aside class="side-drawer" id="sideDrawer">
+        <button class="close-drawer" onclick="toggleDrawer()">&times;</button>
+        
+        <div class="drawer-content">
+            <span class="tag-anatomia"><i class="fa-solid fa-water"></i> Adaptação Semiaquática</span>
+            <h2>ESPINOSSAURO</h2>
 
             <div class="tech-grid">
                 <div class="tech-card">
-                    <div class="label">Comprimento Total</div>
-                    <div class="value">14 a 18 Metros</div>
+                    <i class="fa-solid fa-ruler-horizontal card-icon"></i>
+                    <div>
+                        <div class="label">Comprimento</div>
+                        <div class="value">14 a 18m</div>
+                    </div>
                 </div>
                 <div class="tech-card">
-                    <div class="label">Vela Dorsal</div>
-                    <div class="value">Até 1,8m de Altura</div>
+                    <i class="fa-solid fa-sailboat card-icon"></i>
+                    <div>
+                        <div class="label">Vela Dorsal</div>
+                        <div class="value">Até 1,8m</div>
+                    </div>
                 </div>
                 <div class="tech-card">
-                    <div class="label">Massa Corporal</div>
-                    <div class="value">7 a 9 Toneladas</div>
+                    <i class="fa-solid fa-weight-hanging card-icon"></i>
+                    <div>
+                        <div class="label">Massa</div>
+                        <div class="value">7 a 9 Ton.</div>
+                    </div>
                 </div>
                 <div class="tech-card">
-                    <div class="label">Nicho Ecológico</div>
-                    <div class="value">Piscívoro Semiaquático</div>
+                    <i class="fa-solid fa-fish card-icon"></i>
+                    <div>
+                        <div class="label">Nicho</div>
+                        <div class="value">Piscívoro</div>
+                    </div>
                 </div>
             </div>
 
             <div class="details-box">
-                <p><strong>Navegação Semiaquática:</strong> Possuía focinho alongado com receptores de pressão nasais (similares aos dos crocodilos) e dentes cônicos perfeitos para capturar grandes peixes cretáceos.</p>
-                <p><strong>Vela Dorsal & Cauda em Remo:</strong> Suas verticais espinhas neurais sustentavam uma vela de pele usada para termorregulação e exibição, acompanhada por uma cauda flexível em formato de nadadeira para propulsão na água.</p>
+                <p><strong>Navegação Semiaquática:</strong> Focinho alongado com receptores de pressão nasais e dentes cônicos para captura de peixes.</p>
+                <p><strong>Vela & Cauda:</strong> Espinhas neurais que sustentavam uma vela de pele, junto de uma cauda em formato de nadadeira.</p>
             </div>
-        </div>
 
-        <div class="image-col">
-            <div class="img-container">
-                <img src="../img/espinossauro.jpg" alt="Espinossauro">
+            <!-- Botões que abrem os Modais -->
+            <div class="modal-actions">
+                <button class="btn-modal btn-info" onclick="openModal('infoModal')">
+                    <i class="fa-solid fa-dna"></i> Ficha Científica
+                </button>
+                <button class="btn-modal btn-esqueleto" onclick="openModal('skeletonModal')">
+                    <i class="fa-solid fa-bone"></i> Ver Esqueleto
+                </button>
             </div>
         </div>
-    </main>
+    </aside>
 
     
     <div id="skeletonModal" class="modal">
-        <div class="modal-container">
-            <span class="close-modal" id="closeSkeleton">&times;</span>
-            <img src="/img/esqueleto3.png" alt="Esqueleto do Velociraptor" class="modal-content">
-            <p class="modal-caption">Anatomia Óssea - Esqueleto do Velociraptor</p>
+        <div class="modal-card">
+            <span class="close-modal" onclick="closeModal('skeletonModal')">&times;</span>
+            <h2><i class="fa-solid fa-bone"></i> Esqueleto do Espinossauro</h2>
+            <div class="modal-body">
+                <img src="../img/esqueleto3.png" alt="Esqueleto do Espinossauro" class="modal-img">
+            </div>
         </div>
     </div>
 
+   
     <div id="infoModal" class="modal">
         <div class="modal-card">
-            <span class="close-modal" id="closeInfo">&times;</span>
+            <span class="close-modal" onclick="closeModal('infoModal')">&times;</span>
             <h2><i class="fa-solid fa-dna"></i> Ficha Científica</h2>
             
             <div class="info-grid">
@@ -98,31 +119,28 @@
                     <i class="fa-solid fa-clock"></i>
                     <div>
                         <span class="info-title">Período</span>
-                        <p class="info-desc">Cretáceo Superior (100 e 94 milhões de anos)</p>
+                        <p class="info-desc">Cretáceo Superior (100 a 94M de anos)</p>
                     </div>
                 </div>
-
                 <div class="info-item">
                     <i class="fa-solid fa-ruler-horizontal"></i>
                     <div>
                         <span class="info-title">Tamanho</span>
-                        <p class="info-desc">11 a 14 metros de comprimento</p>
+                        <p class="info-desc">11 a 18 metros</p>
                     </div>
                 </div>
-
                 <div class="info-item">
                     <i class="fa-solid fa-weight-hanging"></i>
                     <div>
                         <span class="info-title">Peso</span>
-                        <p class="info-desc">6 a 7,4 toneladas</p>
+                        <p class="info-desc">6 a 9 toneladas</p>
                     </div>
                 </div>
-
                 <div class="info-item">
-                    <i class="fa-solid fa-earth-asia"></i>
+                    <i class="fa-solid fa-earth-africa"></i>
                     <div>
                         <span class="info-title">Habitat</span>
-                        <p class="info-desc">Extensos sistemas de rios, lagos, planícies de maré e florestas de mangue</p>
+                        <p class="info-desc">Sistemas de rios e deltas do Norte da África</p>
                     </div>
                 </div>
             </div>
@@ -130,34 +148,34 @@
     </div>
 
     <script>
-        const skeletonModal = document.getElementById("skeletonModal");
-        const infoModal = document.getElementById("infoModal");
+        
+        function toggleDrawer() {
+            document.getElementById('sideDrawer').classList.toggle('active');
+            document.getElementById('drawerOverlay').classList.toggle('active');
+        }
 
-        const btnEsqueleto = document.getElementById("btn-esqueleto");
-        const btnInfo = document.getElementById("btn-info");
+        
+        function openModal(id) {
+            document.getElementById(id).style.display = 'flex';
+        }
 
-        const closeSkeleton = document.getElementById("closeSkeleton");
-        const closeInfo = document.getElementById("closeInfo");
+        function closeModal(id) {
+            document.getElementById(id).style.display = 'none';
+        }
 
-        btnEsqueleto.onclick = () => skeletonModal.style.display = "flex";
-        btnInfo.onclick = () => infoModal.style.display = "flex";
-
-        closeSkeleton.onclick = () => skeletonModal.style.display = "none";
-        closeInfo.onclick = () => infoModal.style.display = "none";
-
-        window.onclick = function (event) {
-            if (event.target === skeletonModal) skeletonModal.style.display = "none";
-            if (event.target === infoModal) infoModal.style.display = "none";
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
         };
 
-        document.addEventListener("keydown", function (event) {
-            if (event.key === "Escape") {
-                skeletonModal.style.display = "none";
-                infoModal.style.display = "none";
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                document.querySelectorAll('.modal').forEach(m => m.style.display = 'none');
+                document.getElementById('sideDrawer').classList.remove('active');
+                document.getElementById('drawerOverlay').classList.remove('active');
             }
         });
     </script>
-
 </body>
-
 </html>
