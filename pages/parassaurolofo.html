@@ -7,9 +7,7 @@
     <title>DinoMundo - Parassaurolofo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Roboto:wght@300;400;500;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="../css/parassaurolofo.css">
 </head>
@@ -37,32 +35,52 @@
                 <svg viewBox="0 0 24 24">
                     <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
                 </svg>
-                Voltar ao Início
+                Voltar
             </a>
         </div>
     </header>
 
     <main>
+        <!-- IMAGEM EM CIMA -->
+        <div class="image-col">
+            <div class="img-container">
+                <img src="../img/parassaurolofo.jpg" alt="Parassaurolofo">
+            </div>
+        </div>
+
+        <!-- INFOS EMBAIXO -->
         <div class="content-col">
-            <span class="tag-anatomia">Comunicação & Acústica</span>
+            <div class="tag-anatomia">Herbívoro • Cretáceo Superior</div>
             <h1>PARASSAUROLOFO</h1>
 
             <div class="tech-grid">
                 <div class="tech-card">
-                    <div class="label">Crista Craniana</div>
-                    <div class="value">Até 1,8m de Tubo Ósseo</div>
+                    <div class="card-icon"><i class="fa-solid fa-wave-square"></i></div>
+                    <div>
+                        <div class="label">Crista Craniana</div>
+                        <div class="value">Até 1,8m de Tubo Ósseo</div>
+                    </div>
                 </div>
                 <div class="tech-card">
-                    <div class="label">Comprimento Total</div>
-                    <div class="value">9 a 10 Metros</div>
+                    <div class="card-icon"><i class="fa-solid fa-ruler"></i></div>
+                    <div>
+                        <div class="label">Comprimento Total</div>
+                        <div class="value">9 a 10 Metros</div>
+                    </div>
                 </div>
                 <div class="tech-card">
-                    <div class="label">Massa Corporal</div>
-                    <div class="value">2,5 a 4 Toneladas</div>
+                    <div class="card-icon"><i class="fa-solid fa-weight-scale"></i></div>
+                    <div>
+                        <div class="label">Massa Corporal</div>
+                        <div class="value">2,5 a 4 Toneladas</div>
+                    </div>
                 </div>
                 <div class="tech-card">
-                    <div class="label">Locomoção</div>
-                    <div class="value">Bípede e Quadrúpede</div>
+                    <div class="card-icon"><i class="fa-solid fa-person-walking"></i></div>
+                    <div>
+                        <div class="label">Locomoção</div>
+                        <div class="value">Bípede / Quadrúpede</div>
+                    </div>
                 </div>
             </div>
 
@@ -71,57 +89,63 @@
                 <p><strong>Comunicação Social:</strong> Utilizava essas vocalizações de baixa frequência para manter o bando unido, alertar sobre predadores e atrair parceiros. Além disso, alternava facilmente entre quatro patas para pastar e duas para correr em alta velocidade.</p>
             </div>
         </div>
-
-        <div class="image-col">
-            <div class="img-container">
-                <img src="../img/parassaurolofo.jpg" alt="Parassaurolofo">
-            </div>
-        </div>
     </main>
 
+    <!-- MODAL ESQUELETO -->
     <div id="skeletonModal" class="modal">
-        <div class="modal-container">
-            <span class="close-modal" id="closeSkeleton">&times;</span>
-            <img src="/img/esqueleto 5.png" alt="Esqueleto do Velociraptor" class="modal-content">
-            <p class="modal-caption">Anatomia Óssea - Esqueleto do Velociraptor</p>
+        <div class="modal-card modal-media">
+            <button class="close-modal" id="closeSkeleton">&times;</button>
+            <div class="modal-header">
+                <h2><i class="fa-solid fa-bone"></i> Anatomia Óssea</h2>
+            </div>
+            <div class="modal-body">
+                <div class="modal-img-frame">
+                    <img src="/img/esqueleto 5.png" alt="Esqueleto do Parassaurolofo" class="modal-content">
+                </div>
+                <p class="modal-caption">Estrutura esquelética completa destacando o prolongamento da crista craniana.</p>
+            </div>
         </div>
     </div>
 
+    <!-- MODAL FICHA CIENTÍFICA -->
     <div id="infoModal" class="modal">
         <div class="modal-card">
-            <span class="close-modal" id="closeInfo">&times;</span>
-            <h2><i class="fa-solid fa-dna"></i> Ficha Científica</h2>
-            
-            <div class="info-grid">
-                <div class="info-item">
-                    <i class="fa-solid fa-clock"></i>
-                    <div>
-                        <span class="info-title">Período</span>
-                        <p class="info-desc">Cretáceo Superior (76,5 a 73 milhões de anos)</p>
+            <button class="close-modal" id="closeInfo">&times;</button>
+            <div class="modal-header">
+                <h2><i class="fa-solid fa-dna"></i> Ficha Científica</h2>
+            </div>
+            <div class="modal-body">
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fa-solid fa-clock"></i></div>
+                        <div class="info-content">
+                            <span class="info-title">Período</span>
+                            <p class="info-desc">Cretáceo Superior (76,5 a 73 milhões de anos atrás)</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="info-item">
-                    <i class="fa-solid fa-ruler-horizontal"></i>
-                    <div>
-                        <span class="info-title">Tamanho</span>
-                        <p class="info-desc">9,5 e 10 metros de comprimento e alcançava uma altura total de até 4 metros</p>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fa-solid fa-ruler-combined"></i></div>
+                        <div class="info-content">
+                            <span class="info-title">Dimensões</span>
+                            <p class="info-desc">9,5m a 10m de comprimento por até 4m de altura</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="info-item">
-                    <i class="fa-solid fa-weight-hanging"></i>
-                    <div>
-                        <span class="info-title">Peso</span>
-                        <p class="info-desc"> 2,5 a 5 toneladas</p>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fa-solid fa-weight-hanging"></i></div>
+                        <div class="info-content">
+                            <span class="info-title">Peso Estimado</span>
+                            <p class="info-desc">Entre 2,5 e 5 toneladas</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="info-item">
-                    <i class="fa-solid fa-earth-asia"></i>
-                    <div>
-                        <span class="info-title">Habitat</span>
-                        <p class="info-desc">planícies aluviais, pântanos, margens de rios e florestas úmidas com vegetação rasteira farta de samambaias e coníferas</p>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fa-solid fa-tree"></i></div>
+                        <div class="info-content">
+                            <span class="info-title">Habitat</span>
+                            <p class="info-desc">Planícies aluviais, pântanos e florestas úmidas com abundância de samambaias e coníferas</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -137,25 +161,26 @@
         const closeSkeleton = document.getElementById("closeSkeleton");
         const closeInfo = document.getElementById("closeInfo");
 
-        btnEsqueleto.onclick = () => skeletonModal.style.display = "flex";
-        btnInfo.onclick = () => infoModal.style.display = "flex";
+        btnEsqueleto.onclick = () => skeletonModal.classList.add("active");
+        btnInfo.onclick = () => infoModal.classList.add("active");
 
-        closeSkeleton.onclick = () => skeletonModal.style.display = "none";
-        closeInfo.onclick = () => infoModal.style.display = "none";
+        const closeModal = (modal) => modal.classList.remove("active");
+
+        closeSkeleton.onclick = () => closeModal(skeletonModal);
+        closeInfo.onclick = () => closeModal(infoModal);
 
         window.onclick = function (event) {
-            if (event.target === skeletonModal) skeletonModal.style.display = "none";
-            if (event.target === infoModal) infoModal.style.display = "none";
+            if (event.target === skeletonModal) closeModal(skeletonModal);
+            if (event.target === infoModal) closeModal(infoModal);
         };
 
         document.addEventListener("keydown", function (event) {
             if (event.key === "Escape") {
-                skeletonModal.style.display = "none";
-                infoModal.style.display = "none";
+                closeModal(skeletonModal);
+                closeModal(infoModal);
             }
         });
     </script>
-
 
 </body>
 
