@@ -10,8 +10,8 @@ body {
     font-family: 'Roboto', sans-serif;
     background-color: #0b110d;
     background-image: 
-        radial-gradient(circle at 85% 15%, rgba(40, 60, 45, 0.3) 0%, transparent 60%),
-        radial-gradient(circle at 15% 85%, rgba(15, 28, 20, 0.5) 0%, transparent 60%);
+        radial-gradient(circle at 15% 15%, rgba(40, 60, 45, 0.3) 0%, transparent 60%),
+        radial-gradient(circle at 85% 85%, rgba(15, 28, 20, 0.5) 0%, transparent 60%);
     color: #e0e6e1;
     min-height: 100vh;
     display: flex;
@@ -19,15 +19,15 @@ body {
     overflow-x: hidden;
 }
 
-
+/* ================= HEADER (LADOS INVERTIDOS) ================= */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: row-reverse; /* Inverte a posição do Logo e das Ações */
     padding: 18px 45px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     background: rgba(11, 17, 13, 0.9);
-    /* 2. Suporte estendido para o Blur no Safari */
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 }
@@ -46,6 +46,12 @@ header {
 
 .logo span {
     color: #729c48;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .btn-voltar {
@@ -77,19 +83,54 @@ header {
     flex-shrink: 0; 
 }
 
+.btn-header {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+}
 
+.btn-esqueleto {
+    background-color: #38bdf8;
+    color: #0f172a;
+}
+
+.btn-esqueleto:hover {
+    background-color: #0284c7;
+    color: #ffffff;
+}
+
+.btn-info {
+    background-color: #10b981;
+    color: #ffffff;
+}
+
+.btn-info:hover {
+    background-color: #059669;
+}
+
+
+/* ================= MAIN (IMAGEM À ESQUERDA, TEXTO À DIREITA) ================= */
 main {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-direction: row-reverse; /* Inverte as colunas principal e imagem */
     padding: 30px 50px;
     max-width: 1450px;
     margin: 0 auto;
     width: 100%;
     gap: 50px;
 }
-
 
 .content-col {
     flex: 1;
@@ -123,7 +164,6 @@ h1 {
     margin-bottom: 20px;
 }
 
-
 .tech-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -152,6 +192,7 @@ h1 {
     color: #ffffff;
 }
 
+/* Borda invertida para o lado direito */
 .details-box {
     font-size: 14px;
     line-height: 1.6;
@@ -159,13 +200,12 @@ h1 {
     background: rgba(0, 0, 0, 0.3);
     padding: 18px;
     border-radius: 10px;
-    border-left: 4px solid #729c48;
+    border-right: 4px solid #729c48; 
 }
 
 .details-box p + p {
     margin-top: 10px;
 }
-
 
 .image-col {
     flex: 1.1;
@@ -190,75 +230,8 @@ h1 {
     display: block;
 }
 
-@media (max-width: 960px) {
-    header {
-        padding: 15px 20px;
-    }
 
-    main {
-        flex-direction: column-reverse; 
-        padding: 20px;
-        gap: 30px;
-    }
-
-  
-    .content-col,
-    .image-col {
-        width: 100%;
-    }
-
-    .img-container {
-        height: 300px;
-    }
-
-    h1 {
-        font-size: 38px;
-    }
-}
-
-.header-actions {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-
-.btn-header {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 500;
-    text-decoration: none;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    border: none;
-}
-
-.btn-esqueleto {
-    background-color: #38bdf8;
-    color: #0f172a;
-}
-
-.btn-esqueleto:hover {
-    background-color: #0284c7;
-    color: #ffffff;
-}
-
-
-.btn-info {
-    background-color: #10b981;
-    color: #ffffff;
-}
-
-.btn-info:hover {
-    background-color: #059669;
-}
-
-
+/* ================= MODAL (AJUSTES DE LADO) ================= */
 .modal {
     display: none;
     position: fixed;
@@ -272,7 +245,6 @@ h1 {
     justify-content: center;
     align-items: center;
 }
-
 
 .modal-container {
     position: relative;
@@ -296,7 +268,6 @@ h1 {
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
 }
-
 
 .modal-card {
     position: relative;
@@ -327,14 +298,17 @@ h1 {
     gap: 16px;
 }
 
+/* Item de informação com borda e layout invertidos */
 .info-item {
     display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
     align-items: flex-start;
     gap: 14px;
     background-color: #0f172a;
     padding: 12px 16px;
     border-radius: 8px;
-    border-left: 4px solid #10b981;
+    border-right: 4px solid #10b981; 
 }
 
 .info-item i {
@@ -359,11 +333,11 @@ h1 {
     color: #f8fafc;
 }
 
-
+/* Botão de fechar movido para a esquerda */
 .close-modal {
     position: absolute;
     top: 15px;
-    right: 20px;
+    left: 20px; 
     color: #94a3b8;
     font-size: 28px;
     font-weight: bold;
@@ -376,6 +350,32 @@ h1 {
     color: #ff4747;
 }
 
+
+/* ================= MEDIA QUERIES ================= */
+@media (max-width: 960px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    main {
+        flex-direction: column; /* No mobile, exibe imagem no topo e conteúdo abaixo */
+        padding: 20px;
+        gap: 30px;
+    }
+
+    .content-col,
+    .image-col {
+        width: 100%;
+    }
+
+    .img-container {
+        height: 300px;
+    }
+
+    h1 {
+        font-size: 38px;
+    }
+}
 
 @keyframes zoomIn {
     from {
