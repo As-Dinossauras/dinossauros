@@ -6,66 +6,90 @@
     <title>DinoMundo - Triceratops</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="../css/triceratops.css">
 </head>
 <body>
 
     <header>
-        <div class="logo">
-            <i class="fa-solid fa-dragon logo-icon"></i>
-            DINO<span>MUNDO</span>
-        </div>
         <a href="../index.html" class="btn-voltar">
             <svg viewBox="0 0 24 24">
                 <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
             </svg>
-            Voltar ao Início
+            Voltar
         </a>
+
+        <div class="logo">
+            <i class="fa-solid fa-dragon logo-icon"></i>
+            DINO<span>MUNDO</span>
+        </div>
     </header>
 
     <main>
-        <div class="content-col">
-            <span class="tag-anatomia">Anatomia & Biomecânica</span>
+        <div class="main-container">
+            <div class="header-tag-wrapper">
+                <span class="tag-anatomia"><i class="fa-solid fa-microscope"></i> Anatomia & Biomecânica</span>
+                <span class="status-indicator"><span class="dot"></span> Cretáceo Superior</span>
+            </div>
+
             <h1>TRICERATOPS</h1>
-            
+
+            <!-- 1. Informações dos retângulos -->
             <div class="tech-grid">
                 <div class="tech-card">
-                    <div class="label">Chifres Supraorbitais</div>
-                    <div class="value">Até 1 metro de comprimento</div>
+                    <div class="card-icon"><i class="fa-solid fa-bullhorn"></i></div>
+                    <div class="card-info">
+                        <div class="label">Chifres Supraorbitais</div>
+                        <div class="value">Até 1,0 m</div>
+                    </div>
                 </div>
                 <div class="tech-card">
-                    <div class="label">Escudo Craniano</div>
-                    <div class="value">Sólido (Sem Fenestras)</div>
+                    <div class="card-icon"><i class="fa-solid fa-shield"></i></div>
+                    <div class="card-info">
+                        <div class="label">Escudo Craniano</div>
+                        <div class="value">Maciço (Sólido)</div>
+                    </div>
                 </div>
                 <div class="tech-card">
-                    <div class="label">Massa Corporal</div>
-                    <div class="value">6 a 12 Toneladas</div>
+                    <div class="card-icon"><i class="fa-solid fa-weight-hanging"></i></div>
+                    <div class="card-info">
+                        <div class="label">Massa Corporal</div>
+                        <div class="value">6 a 12 Toneladas</div>
+                    </div>
                 </div>
                 <div class="tech-card">
-                    <div class="label">Velocidade Máxima</div>
-                    <div class="value">25 a 32 km/h</div>
+                    <div class="card-icon"><i class="fa-solid fa-gauge-high"></i></div>
+                    <div class="card-info">
+                        <div class="label">Velocidade Máxima</div>
+                        <div class="value">25 - 32 km/h</div>
+                    </div>
                 </div>
             </div>
 
+            <!-- 2. Imagem no MEIO -->
+            <div class="image-section">
+                <div class="img-container">
+                    <img src="../img/triceratops.jpg" alt="Triceratops">
+                    <div class="img-badge">
+                        <i class="fa-solid fa-shield-halved"></i> Herbívoro Ceratopsídeo
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Retângulo Grande -->
             <div class="details-box">
-                <p><strong>Gola Óssea e Proteção:</strong> Diferente de outros ceratopsídeos, o escudo parietal do Triceratops era completamente maciço e sem cavidades verticais, servindo como uma blindagem anatômica contra predadores e como ponto de ancoragem para a forte musculatura do pescoço.</p>
-                <p><strong>Bateria Dentária Contínua:</strong> Possuía centenas de dentes organizados em colunas verticais que se autorrenovavam. Funcionando como tesouras duplas, permitiam mastigar e processar vegetação extremamente dura, como cicas e palmeiras rasteiras.</p>
+                <p><strong><i class="fa-solid fa-angle-right"></i> Gola Óssea e Proteção:</strong> Diferente de outros ceratopsídeos, o escudo parietal do Triceratops era completamente maciço e sem cavidades verticais, servindo como uma blindagem anatômica contra predadores e como ponto de ancoragem para a forte musculatura do pescoço.</p>
+                <p><strong><i class="fa-solid fa-angle-right"></i> Bateria Dentária Contínua:</strong> Possuía centenas de dentes organizados em colunas verticais que se autorrenovavam. Funcionando como tesouras duplas, permitiam mastigar e processar vegetação extremamente dura, como cicas e palmeiras rasteiras.</p>
             </div>
 
             <div class="modal-actions">
-                <button class="btn-modal" onclick="openModal('modal-ficha')">
-                    Ficha Técnica
+                <button class="btn-modal btn-primary" onclick="openModal('modal-ficha')">
+                    <i class="fa-solid fa-list-check"></i> Ficha Técnica
                 </button>
-                <button class="btn-modal" onclick="openModal('modal-esqueleto')">
-                    Ver Esqueleto
+                <button class="btn-modal btn-secondary" onclick="openModal('modal-esqueleto')">
+                    <i class="fa-solid fa-bone"></i> Ver Esqueleto
                 </button>
-            </div>
-        </div>
-
-        <div class="image-col">
-            <div class="img-container">
-                <img src="/img/triceratops.jpg" alt="Triceratops">
             </div>
         </div>
     </main>
@@ -74,15 +98,15 @@
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal('modal-ficha')">&times;</span>
             <div class="modal-header">
-                <h2>Informações Gerais</h2>
+                <h2><i class="fa-solid fa-file-lines"></i> Informações Gerais</h2>
             </div>
             <div class="modal-grid">
                 <div class="modal-card">
-                    <div class="label">Período</div>
+                    <div class="label">Período Histórico</div>
                     <div class="value">Cretáceo Superior</div>
                 </div>
                 <div class="modal-card">
-                    <div class="label">Tamanho</div>
+                    <div class="label">Comprimento Médio</div>
                     <div class="value">8 a 9 Metros</div>
                 </div>
                 <div class="modal-card">
@@ -90,7 +114,7 @@
                     <div class="value">6 a 12 Toneladas</div>
                 </div>
                 <div class="modal-card">
-                    <div class="label">Habitat</div>
+                    <div class="label">Região Geográfica</div>
                     <div class="value">América do Norte</div>
                 </div>
             </div>
@@ -101,7 +125,7 @@
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal('modal-esqueleto')">&times;</span>
             <div class="modal-header">
-                <h2>Esqueleto do Triceratops</h2>
+                <h2><i class="fa-solid fa-skull"></i> Esqueleto do Triceratops</h2>
             </div>
             <div class="modal-body">
                 <img src="../img/esqueletoTriceratops.png" alt="Esqueleto Completo do Triceratops" class="modal-img-full">
