@@ -7,9 +7,7 @@
     <title>DinoMundo - Anquilossauro</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Roboto:wght@300;400;500;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="../css/anquilossauro.css">
 </head>
@@ -22,24 +20,12 @@
             DINO<span>MUNDO</span>
         </div>
 
-        <div class="header-actions">
-            <button id="btn-esqueleto" class="btn-header btn-esqueleto">
-                <i class="fa-solid fa-bone"></i>
-                Ver Esqueleto
-            </button>
-
-            <button id="btn-info" class="btn-header btn-info">
-                <i class="fa-solid fa-circle-info"></i>
-                Ficha Técnica
-            </button>
-
-            <a href="/index.html" class="btn-header btn-voltar">
-                <svg viewBox="0 0 24 24">
-                    <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
-                </svg>
-                Voltar ao Início
-            </a>
-        </div>
+        <a href="../index.html" class="btn-header btn-voltar">
+            <svg viewBox="0 0 24 24">
+                <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
+            </svg>
+            Voltar ao Início
+        </a>
     </header>
 
     <main>
@@ -70,20 +56,39 @@
                 <p><strong>Marreta Caudal:</strong> A ponta de sua cauda possuía um porrete gigante de osso fundido. Guiado por músculos caudais ultra-resistentes, um golpe era capaz de quebrar pernas e costelas de grandes predadores como o T-Rex.</p>
                 <p><strong>Tanque Biológico:</strong> Seu dorso e flancos eram cobertos por osteodermes rígidos (placas ósseas incrustadas na pele). Ele possuía inclusive pálpebras blindadas por pequenas placas para cobrir os olhos durante ataques.</p>
             </div>
-        </div>
 
-        <div class="image-col">
-            <div class="img-container">
-                <img src="../img/anquilossauro.jpg" alt="Anquilossauro">
+            <div class="actions-centered">
+                <button id="btn-imagem" class="btn-action btn-imagem">
+                    <i class="fa-solid fa-image"></i>
+                    Ver Imagem
+                </button>
+
+                <button id="btn-esqueleto" class="btn-action btn-esqueleto">
+                    <i class="fa-solid fa-bone"></i>
+                    Ver Esqueleto
+                </button>
+
+                <button id="btn-info" class="btn-action btn-info">
+                    <i class="fa-solid fa-circle-info"></i>
+                    Ficha Técnica
+                </button>
             </div>
         </div>
     </main>
 
+    <div id="imageModal" class="modal">
+        <div class="modal-container">
+            <span class="close-modal" id="closeImage">&times;</span>
+            <img src="../img/anquilossauro.jpg" alt="Anquilossauro" class="modal-content">
+            <p class="modal-caption">Ilustração - Anquilossauro</p>
+        </div>
+    </div>
+
     <div id="skeletonModal" class="modal">
         <div class="modal-container">
             <span class="close-modal" id="closeSkeleton">&times;</span>
-            <img src="/img/esqueleto4.png" alt="Esqueleto do Velociraptor" class="modal-content">
-            <p class="modal-caption">Anatomia Óssea - Esqueleto do Velociraptor</p>
+            <img src="../img/esqueleto4.png" alt="Esqueleto do Anquilossauro" class="modal-content">
+            <p class="modal-caption">Anatomia Óssea - Esqueleto do Anquilossauro</p>
         </div>
     </div>
 
@@ -105,7 +110,7 @@
                     <i class="fa-solid fa-ruler-horizontal"></i>
                     <div>
                         <span class="info-title">Tamanho</span>
-                        <p class="info-desc">6,25 e 9 metros de comprimento, cerca de 1,7 a 2 metros de altura até o quadril e pesava entre 4 e 8 toneladas</p>
+                        <p class="info-desc">6,25 e 9 metros de comprimento, cerca de 1,7 a 2 metros de altura até o quadril</p>
                     </div>
                 </div>
 
@@ -129,28 +134,35 @@
     </div>
 
     <script>
+        const imageModal = document.getElementById("imageModal");
         const skeletonModal = document.getElementById("skeletonModal");
         const infoModal = document.getElementById("infoModal");
 
+        const btnImagem = document.getElementById("btn-imagem");
         const btnEsqueleto = document.getElementById("btn-esqueleto");
         const btnInfo = document.getElementById("btn-info");
 
+        const closeImage = document.getElementById("closeImage");
         const closeSkeleton = document.getElementById("closeSkeleton");
         const closeInfo = document.getElementById("closeInfo");
 
+        btnImagem.onclick = () => imageModal.style.display = "flex";
         btnEsqueleto.onclick = () => skeletonModal.style.display = "flex";
         btnInfo.onclick = () => infoModal.style.display = "flex";
 
+        closeImage.onclick = () => imageModal.style.display = "none";
         closeSkeleton.onclick = () => skeletonModal.style.display = "none";
         closeInfo.onclick = () => infoModal.style.display = "none";
 
         window.onclick = function (event) {
+            if (event.target === imageModal) imageModal.style.display = "none";
             if (event.target === skeletonModal) skeletonModal.style.display = "none";
             if (event.target === infoModal) infoModal.style.display = "none";
         };
 
         document.addEventListener("keydown", function (event) {
             if (event.key === "Escape") {
+                imageModal.style.display = "none";
                 skeletonModal.style.display = "none";
                 infoModal.style.display = "none";
             }
